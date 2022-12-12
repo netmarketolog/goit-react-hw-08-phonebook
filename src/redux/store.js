@@ -33,8 +33,8 @@ export const store = configureStore({
     auth: persistReducer(authPersistConfig, authReducer),
     contacts: contactsReducer,
     filter: filterReducer,
-    devTools: process.env.NODE_ENV === 'development',
   },
   middleware,
+  devTools: process.env.NODE_ENV === 'development',
 });
 export const persistor = persistStore(store);
