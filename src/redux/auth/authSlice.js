@@ -36,8 +36,6 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
       })
       .addCase(logIn.rejected, state => {
-        state.user = { name: null, email: null };
-        state.isLoggedIn = false;
         Notify.warning('Password or username entered incorrectly');
       })
       .addCase(logOut.fulfilled, state => {
